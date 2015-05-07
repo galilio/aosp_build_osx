@@ -36,7 +36,7 @@ endif # BUILD_HOST_static
 
 build_mac_version := $(shell sw_vers -productVersion)
 
-mac_sdk_versions_supported :=  10.6 10.7 10.8
+mac_sdk_versions_supported :=  10.9 10.10
 ifneq ($(strip $(MAC_SDK_VERSION)),)
 mac_sdk_version := $(MAC_SDK_VERSION)
 ifeq ($(filter $(mac_sdk_version),$(mac_sdk_versions_supported)),)
