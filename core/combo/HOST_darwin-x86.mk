@@ -85,6 +85,16 @@ ifeq ($(mac_sdk_version),10.8)
 host_toolchain_header := $(HOST_TOOLCHAIN_ROOT)/lib/gcc/i686-apple-darwin$(gcc_darwin_version)/4.2.1/include
 HOST_GLOBAL_CFLAGS += -isystem $(host_toolchain_header)
 endif
+ifeq ($(mac_sdk_version),10.9)
+# Mac SDK 10.9 no longer has stdarg.h, etc
+host_toolchain_header := $(HOST_TOOLCHAIN_ROOT)/lib/gcc/i686-apple-darwin$(gcc_darwin_version)/4.2.1/include
+HOST_GLOBAL_CFLAGS += -isystem $(host_toolchain_header)
+endif
+ifeq ($(mac_sdk_version),10.10)
+# Mac SDK 10.10 no longer has stdarg.h, etc
+host_toolchain_header := $(HOST_TOOLCHAIN_ROOT)/lib/gcc/i686-apple-darwin$(gcc_darwin_version)/4.2.1/include
+HOST_GLOBAL_CFLAGS += -isystem $(host_toolchain_header)
+endif
 else
 HOST_CC := gcc
 HOST_CXX := g++
